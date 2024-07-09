@@ -23,9 +23,6 @@ current_level = Level(level_file_path)
 # Создание игрока
 player = Player(current_level.spawn_point)
 
-# Camera
-camera = Camera(len(current_level.platforms) * 32, len(current_level.platforms)*32)
-
 # Основной цикл игры
 clock = pygame.time.Clock()
 running = True
@@ -37,9 +34,6 @@ while running:
     # Обновление игрока и уровня
     player.update(current_level)
     current_level.update()
-
-    # Обновление камеры
-    camera.update(player)
 
     # Обновление экрана
     screen.fill((0, 0, 0))
